@@ -1,0 +1,30 @@
+<!-- Side Bar -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-animate-left w3-card-2" style="z-index:3;width:18%;" id="mySidebar">
+    <!-- Logo -->
+    <div class="image" >
+    <img src="assets/web/images/logo2.png"  width="237" height="130" class="logo">
+    </div>
+    <!-- Sidebar Links -->
+    <div class="w3-sidebar w3-bar-block w3-blue" style="width:18%">
+  <a class="w3-bar-item w3-button"  [routerLink]="['./cheque']"> <i class="w3-medium fa fa-user"></i> Online  Cheque Submit</a>
+  <!-- <a class="w3-bar-item w3-button"  [routerLink]="['./viewcheque']"> <i class="w3-medium fa fa-user"></i>  Cheque Request</a> -->
+  <a class="w3-bar-item w3-button"  [routerLink]="['./dth']"> <i class="w3-medium fa fa-user"></i>  DTH Bill</a>
+  <a class="w3-bar-item w3-button"  [routerLink]="['./electricity']"> <i class="w3-medium fa fa-user"></i>  Electricity Bill</a>
+  <a class="w3-bar-item w3-button"  [routerLink]="['./funds-transfer']"> <i class="w3-medium fa fa-user"></i>  Money Transfer</a>
+  <a class="w3-bar-item w3-button"  [routerLink]="['./phone']"> <i class="w3-medium fa fa-user"></i>Mobile Recharge </a>
+  <a class="w3-bar-item w3-button"  [routerLink]="['./transactions']"> <i class="w3-medium fa fa-user"></i>Mini Statements </a>
+  <a class="w3-bar-item w3-button"  [routerLink]="['./details']"> <i class="w3-medium fa fa-user"></i>Profile </a>
+
+
+  <a class="w3-bar-item w3-button"  (click)="Logout()"> <i class="w3-medium fa fa-sign-out"></i>>  LOGOUT</a>
+</div>
+</nav>
+<!-- Load main contents -->
+<div class="w3-main" style="margin-left:250px;">
+	<div class="w3-container">
+  <!-- Initiate Child Routing -->
+		<router-outlet></router-outlet>
+  </div>
+
+</div>
+

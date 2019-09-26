@@ -1,0 +1,22 @@
+<div class="w3-panel w3-blue">
+  <p>Welcome to iNB:</p>
+</div>
+
+<!-- <div class="w3-dropdown-hover">
+  <button class="w3-button w3-black">Transctions</button>
+  <div class="w3-dropdown-content w3-bar-block w3-border">
+
+
+ </div>
+</div> -->
+<span>
+	<a class="btn btn-primary" style="background-color:green"  [routerLink]="['./withdrawal']"> <i class="w3-medium fa fa-user"></i> Withdrawal</a>
+</span>
+&nbsp;&nbsp;
+<span>
+	<a class="btn btn-primary" style="background-color:green"  [routerLink]="['./deposit']"> <i class="w3-medium fa fa-user"></i> Deposit</a>
+</span>
+
+
+  <!-- Initiate Child Routing -->
+      <router-outlet></router-outlet>

@@ -1,0 +1,34 @@
+<!-- main app container -->
+<link href="//netdna.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" />
+<button (click)="NewRequest();">New Request</button>
+<button (click)="Pending();">Your Request </button>
+
+<div *ngIf="newrequest">
+  <div class="jumbotron">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <h3>OverDraft</h3>
+          <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label>amount</label>
+              <input type="number" formControlName="amount" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.amount.errors }" />
+              <div *ngIf="submitted && f.amount.errors" class="invalid-feedback">
+                <div *ngIf="f.amount.errors.required">amount is required</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <button class="btn btn-primary">Register</button>
+          </div>
+          </form>
+         <div >{{amt1}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="pending">
+bye
+</div>

@@ -1,0 +1,41 @@
+<app-nav></app-nav>
+
+<head>
+  <link href="/assets/web/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+  <link href="/assets/web/css/style.css" type="text/css" rel="stylesheet" media="all">
+  <link href="/assets/web/css/font-awesome.css" rel="stylesheet">
+</head>
+<div class="w3ls-section contact">
+  <div class="container">
+    <div class="w3ls-title">
+              <h2 class="h3-w3l">Login</h2>
+
+    </div>
+
+<div class="w3-container align-center w3-card login-card">
+  <form [formGroup]="loginForm" (ngSubmit)="doLogin()">
+  <div class="text-center">
+  </div>
+
+  <label class="w3-text-blue"><b>Username</b></label>
+  <input class="w3-input w3-border" type="username" formControlName="username">
+  <div class="w3-panel w3-red" *ngIf="loginForm.controls.username.invalid ">Please enter valid email address</div>
+
+
+  <label class="w3-text-blue"><b>Password</b></label>
+  <input class="w3-input w3-border" type="password" formControlName="password">
+  <div class="w3-panel w3-red" *ngIf="loginForm.controls.password.invalid ">Password must be at least 6 characters long, and contain a number</div>
+  <br>
+  <button class="w3-btn w3-blue" type="submit" [disabled]="!loginForm.valid">Login <i class="w3-medium fa fa-check"></i> </button>
+  </form>
+  <div class="w3-panel w3-blue-gray">
+    </div>
+
+
+
+  </div>
+
+
+<br><br><br>
+
+<app-footer></app-footer>

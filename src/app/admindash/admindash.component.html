@@ -1,0 +1,35 @@
+
+
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-animate-left w3-card-2" style="z-index:3;width:18%;" id="mySidebar">
+    <!-- Logo -->
+    <div class="image" >
+    <img src="assets/web/images/logo2.png"  width="237" height="130" class="logo">
+    </div>
+    <!-- Sidebar Links -->
+    <div class="w3-sidebar w3-bar-block w3-blue" style="width:18%">
+	<!-- Sidebar Links -->
+	<a class="w3-bar-item w3-button"  [routerLink]="['./list']"> <i class="w3-medium fa fa-user"></i> Approval Request </a>
+	<a class="w3-bar-item w3-button"  [routerLink]="['./trans']"> <i class="w3-medium fa fa-user"></i> Transactions</a>
+
+	<a class="w3-bar-item w3-button"  [routerLink]="['./chequereport']"> <i class="w3-medium fa fa-user"></i> Cheque Report</a>
+
+	<!-- <a class="w3-bar-item w3-button"  [routerLink]="['./loanrequest']"> <i class="w3-medium fa fa-user"></i> loan request</a> -->
+
+	<a class="w3-bar-item w3-button"  [routerLink]="['./lockedaccounts']"> <i class="w3-medium fa fa-user"></i> Locked Accounts</a>
+	<a class="w3-bar-item w3-button"  (click)="Logout()"> <i class="w3-medium fa fa-sign-out"></i>>  LOGOUT</a>
+</div>
+
+
+
+
+	<a class="w3-bar-item w3-button" (click)="logOut()"><i class="w3-medium fa fa-sign-out"></i> Logout</a> -->
+</nav>
+
+<!-- Load main contents -->
+<div class="w3-main" style="margin-left:250px;">
+	<div class="w3-container">
+	<!-- Initiate Child Routing -->
+  <router-outlet></router-outlet>
+	</div>
+</div>
+

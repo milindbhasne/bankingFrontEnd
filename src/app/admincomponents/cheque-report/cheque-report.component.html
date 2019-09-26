@@ -1,0 +1,34 @@
+<div class="w3-panel w3-round-small w3-blue">
+    <h3>Cheque Request</h3>
+  </div>
+
+  <table class="w3-table w3-striped w3-bordered">
+    <tr>
+
+        <th><i class="w3-medium custom-icon fa fa-user"></i>Cheque Number</th>
+      <th><i class="w3-medium custom-icon fa fa-user"></i> amount</th>
+      <th><i class="w3-medium custom-icon fa fa-envelope-o"></i> Account type</th>
+      <th><i class="w3-medium custom-icon fa fa-phone"></i> Account Number</th>
+      <th><i class="w3-medium custom-icon fa fa-user"></i> Date</th>
+      <th><i class="w3-medium custom-icon fa fa-user"></i> username</th>
+
+
+    </tr>
+
+     <tr *ngFor="let rec of list;index as j">
+
+       <td>{{rec.chequeNo}}</td>
+      <td>{{rec.amount}}</td>
+      <td>{{rec.account}}</td>
+      <td>{{rec.accountNumber}}</td>
+       <td>{{rec.date}}</td>
+       <td>{{rec.username}}
+       <td><button  [disabled]="buttons1[j]" (click)="buttons1[j]=true" (click)="received(rec.accountNumber); "class= " w3-button w3-blue"   >Received  </button></td>
+        <td><button  [disabled]="buttons2[j]" (click)="buttons2[j]=true"(click)="clearnace(rec.accountNumber);" class="w3-button w3-green">clearnace</button></td>
+        <td><button  [disabled]="buttons3[j]" (click)="buttons3[j]=true" (click)="cleared(rec.accountNumber);addbalance(rec.accountNumber,rec.amount,rec.account,rec.username,rec.chequeNo); "class= " w3-button w3-green">cleared</button></td>
+        <td><button  [disabled]="buttons4[j]" (click)="buttons4[j]=true"(click)="bounced(rec.accountNumber);deductbalance(rec.accountNumber,rec.amount);" class="w3-button w3-red">Bounced</button></td>
+
+       </tr>
+
+
+

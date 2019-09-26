@@ -1,0 +1,49 @@
+<div class="w3-panel w3-round-small w3-blue">
+  <h3>Approval Request </h3>
+</div>
+
+<table class="w3-table w3-striped w3-bordered">
+  <tr>
+    <!-- <th><i class="w3-medium custom-icon fa fa-refresh"></i> Sr. No.</th> -->
+    <!-- <th>ID</th> -->
+    <th><i class="w3-medium custom-icon fa fa-user"></i> First Name</th>
+    <th><i class="w3-medium custom-icon fa fa-user"></i> Last Name</th>
+    <th><i class="w3-medium custom-icon fa fa-envelope-o"></i> Account type</th>
+    <th><i class="w3-medium custom-icon fa fa-phone"></i> address</th>
+    <!-- <th><i class="w3-medium custom-icon fa fa-pencil"></i> address2</th>
+    <th><i class="w3-medium custom-icon fa fa-trash"></i> address2</th> -->
+    <th><i class="w3-medium custom-icon fa fa-user"></i> city</th>
+    <th><i class="w3-medium custom-icon fa fa-user"></i> state</th>
+    <th><i class="w3-medium custom-icon fa fa-envelope-o"></i> pin</th>
+    <th><i class="w3-medium custom-icon fa fa-phone"></i> username</th>
+    <th><i class="w3-medium custom-icon fa fa-pencil"></i> email</th>
+
+  </tr>
+
+  <tr *ngFor="let rec of list">
+    <td>{{rec.firstName}}</td>
+    <td>{{rec.lastName}}</td>
+    <td>{{rec.account}}</td>
+    <td>{{rec.address1}}</td>
+    <!-- <td>{{rec.address2}}</td>
+    <td>{{rec.address}}</td> -->
+    <td>{{rec.city}}</td>
+    <td>{{rec.state}}</td>
+    <td>{{rec.pin}}</td>
+    <td>{{rec.username}}</td>
+    <td>{{rec.email}}</td>
+     <td><button  (click)="approved(rec.email, rec.firstName, rec.account) "class= " w3-button w3-green">approve</button></td>
+				<td><button (click)="reject(rec.email)" class="w3-button w3-red">Reject</button></td>
+
+</tr>
+
+
+
+
+
+
+
+
+
+
+
