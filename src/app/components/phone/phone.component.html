@@ -5,7 +5,7 @@
   <form [formGroup]="phone" (ngSubmit)="onSubmit()">
 
       <div class="form-group">
-          <label>Phone No.</label>
+          <label>Mobile No.</label>
           <input type="number" formControlName="phoneNumber" class="form-control"
             [ngClass]="{ 'is-invalid': submitted && f.phoneNumber.errors }" />
           <div *ngIf="submitted && f.phoneNumber.errors" class="invalid-feedback">

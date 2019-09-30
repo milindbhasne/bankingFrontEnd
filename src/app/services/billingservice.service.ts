@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Payment } from "../services/payment";
 import { HttpClient ,HttpHeaders } from '@angular/common/http';
-import { Observable } from "rxjs/observable";
+import { Observable } from "rxjs/Observable";
 
 const type = 'company';
 
@@ -33,14 +33,14 @@ options
 );
 }
 
-postdthPayment(reg:Payment) {
+postdthPayment(reg) {
 const companyName = 'dth';
 reg['companyName'] = companyName;
 reg['type'] = type;
 const options = {
 headers: new HttpHeaders({ 'content-type': 'application/json' })
 }
-return this.http.post<Payment[]>(
+return this.http.post(
 this.baseURL,
 reg,
 options

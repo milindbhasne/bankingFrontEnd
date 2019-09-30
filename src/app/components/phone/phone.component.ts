@@ -66,9 +66,15 @@ get f() { return this.phone.controls; }
 
       const formData = this.phone.value;
       console.log(formData + 'data');
-      this.billing.postPhonePayment(formData).subscribe(
-        () => {
-          this.toastr.success('success', "Payment Done");
+      this.billing.postPhonePayment(formData).subscribe(data => {
+
+        if (data.success) {
+          this.toastr.success("success", "Payment Done");
+        }
+        else if (!(data.success)){
+          this.toastr.warning("unsuccessful", "Payment");
+        }
+         
           this.phone.reset();
           this.router.navigate(['dash/details']);
         }

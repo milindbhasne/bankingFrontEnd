@@ -14,12 +14,12 @@ export class UsertransctionService {
     this.header = new HttpHeaders(headerSettings);
   }
 
-  postRegister(reg: Usertranc) {
+  postRegister(reg) {
     reg['type'] = 'user';
     const options = {
       headers: new HttpHeaders({ 'content-type': 'application/json' })
     }
-    return this.http.post<Usertranc[]>(
+    return this.http.post(
       this.baseURL,
       reg,
       options

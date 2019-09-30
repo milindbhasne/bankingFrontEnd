@@ -6,25 +6,27 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6 offset-md-3">
-          <h2 style="color:blue;text-align:center;"><b>Registration Form</b></h2>
+          <h2 style="text-align:center;"><b>Registration Form</b></h2>
           <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
             <div class="form-group">
-              <label style="color:blue;text-align:left;">Type Of Account</label>
-
-              <div>
-                <input type="radio" id="saving" formControlName="account" class="form-control" name='account'
-                  value="saving">
-
-                <label for="save" style="color:blue;text-align:center;">Saving</label>
-              </div>
-
-              <div>
-                <input type="radio" id="current" formControlName="account" class="form-control" name="account"
-                  value="current">
-                <label for="current">Current</label>
-              </div>
+              <label style="text-align:left;">Type Of Account</label>
+<br>
+              <label>
+                  <!-- width: 300px;
+                  height: 300px;
+                  position: absolute;
+                  left: 50%;
+                  top: 50%; -->
+                  <input type="radio" value="saving" formControlName="account">
+                    <span>saving</span>
+                </label>
+                <br>
+                <label>
+                  <input style="position: relative;right :-240px;top:-31px" type="radio" value="current" formControlName="account">
+                    <span style="position: relative;right :-240px;top:-31px">current</span>
+                </label>
               <div *ngIf="submitted && f.account.errors" class="invalid-feedback">
-                <div *ngIf="f.account.errors.required">Account is required</div>
+                <div *ngIf="f.account.errors.required">Account type is required</div>
               </div>
             </div>
 
@@ -56,15 +58,16 @@
             <!--ADDRESS   2 -->
             <div class="form-group">
               <div>
-                <p>line 2</p>
+                  <label>Line 2 </label>
               </div>
               <input type="text" formControlName="address2" class="form-control"
                 [ngClass]="{ 'is-invalid': submitted && f.address2.errors }" />
+
             </div>
             <!--ADDRESS   3 -->
             <div class="form-group">
               <div>
-                <p>line 3</p>
+                  <label>Line 3 </label>
               </div>
               <input type="text" formControlName="address3" class="form-control"
                 [ngClass]="{ 'is-invalid': submitted && f.address3.errors }" />

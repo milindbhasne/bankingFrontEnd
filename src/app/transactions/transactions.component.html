@@ -1,24 +1,15 @@
 <link href="//netdna.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" />
 
 <div class="w3-panel w3-round-small w3-blue">
-        <h3>Transactions </h3>
+        <h3>Bill Payments</h3>
       </div>
     <table class="w3-table w3-bordered">
     <tr>
-    <!-- <th><i class="w3-medium custom-icon fa fa-refresh"></i> Sr. No.</th> -->
-    <!-- <th>ID</th> -->
-    <th><i class="w3-medium custom-icon fa fa-user"></i>Account Number</th>
-    <th><i class="w3-medium custom-icon fa fa-user"></i>ToAccountNumber</th>
-    <th><i class="w3-medium custom-icon fa fa-envelope-o"></i> Amount</th>
-    <th><i class="w3-medium custom-icon fa fa-phone"></i>Time</th>
-    <th><i class="w3-medium custom-icon fa fa-pencil"></i>Transactions type</th>
+      <th *ngFor="let head of header">{{head}}</th>
 
+    </tr>
 
     <tr *ngFor="let rec of list">
-    <td>{{rec.from}}</td>
-    <td>{{rec.to}}</td>
-    <td>{{rec.amount}}</td>
-    <td>{{rec.timestamp}}</td>
-    <td>{{rec.transactionType}}</td>
+      <td *ngFor="let data of rec">{{data}}</td>
     </tr>
 

@@ -6,6 +6,7 @@ export class Payment {
   balance:number;
   billNumber:number;
   dthNumber:number;
+
 }
 
 

@@ -57,14 +57,18 @@ get f() { return this.Transfer.controls; }
         console.log(this.Transfer.controls);
         return;
     }
-    console.log(this.Transfer.value);
+    //console.log(this.Transfer.value);
 
 
     const formData = this.Transfer.value;
-    console.log(formData + 'data');
-    this.usertran.postRegister(formData).subscribe(
-      () => {
-        this.toastr.success('success', "Debit");
+    console.log(formData , 'data');
+    this.usertran.postRegister(formData).subscribe(data => {
+      if (data.success) {
+        this.toastr.success("success", "Payment Done");
+      }
+      else if (!(data.success)){
+        this.toastr.warning("unsuccessful", "Payment");
+      }
         this.Transfer.reset();
         this.router.navigate(['dash/details']);
       }

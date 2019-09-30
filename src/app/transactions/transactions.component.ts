@@ -27,6 +27,7 @@ export class TransactionsComponent implements OnInit {
   name: any;
   subscription: Subscription;
   list: List[];
+  header: [String, String, String, String, String, String, String, String];
 
 
   constructor(
@@ -60,10 +61,29 @@ export class TransactionsComponent implements OnInit {
 
   get(accno) {
     this.billing.getlist(accno).subscribe(data => {
-      this.list = data;
-      console.log(data + "from trans");
+      this.list = [];
+      let details = data[0].receipt;
+      for (let listData of data) {
+        let temp = []
+        for (let tempData in listData.receipt) {
+          temp = [...temp, listData.receipt[tempData]];
+        }
+        this.list = [...this.list, temp];
+      }
+      this.setHeader(details);
+      console.log(this.list)
     });
   }
 
-
+  setHeader (details) {
+    // let billType;
+    // if (details.type === 'company') {
+    //   if (details.bill_number) billType = 'Bill Number';
+    //   else if (details.phone_number) billType = 'Phone Number';
+    //   else if (details.dth_number) billType = 'DTH Number';
+    // }
+    // console.log(details.bill_number)
+    // console.log(billType)
+    this.header = ['Account Number', 'To Account Number', 'Time', 'Amount', 'Type', 'Remaining Balance', 'billType', 'Company Name'];
+  }
 }
